@@ -11,6 +11,6 @@ They can be found in the package.json file. Node version is 12.12.12 and Angular
 ## How to run it   
 Open two terminal windows.  
 1. window write **npm start**
-2. window write **cd angular-src** and then **ng serve**  
+2. window (I prefer bash) write **cd angular-src** and then **ng serve**  
 Open for example Google Chrome *http://localhost:4200*  
 
