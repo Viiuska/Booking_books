@@ -13,46 +13,50 @@ const inventory = require('../routes/inventory')
 Book.create({
   title:"Don Quixote",
   author:"Miguel de Cervantes",
-  genre:""
+  genre:"",
+  available:2
 },{
   title:"Lord of the Rings",
   author:"J.R.R. Tolkien",
-  genre:""
+  genre:"",
+  available:4
 },{
   title:"Harry Potter and the Sorcerer's Stone",
   author:"J.K. Rowling",
-  genre:""
+  genre:"",
+  available:2
 },{
   title:"And Then There Were None",
   author:"Agatha Christie",
-  genre:""
+  genre:"",
+  available:2
 },{
   title:"Alice's Adventures in Wonderland",
-  author:"Lewis Carroll",genre:""
+  author:"Lewis Carroll",genre:"",available:1
 },{
   title:"The Lion, the Witch, and the Wardrobe",
-  author:"C.S. Lewis",genre:""
+  author:"C.S. Lewis",genre:"",available:3
 },{
   title:"Pinocchio",
-  author:"Carlo Collodi",genre:""
+  author:"Carlo Collodi",genre:"",available:5
 },{
   title:"Catcher in the Rye",
-  author:"J.D. Salinger",genre:""
+  author:"J.D. Salinger",genre:"",available:2
 },{
   title:"Anne of Green Gables",
-  author:"L. M. Montgomery",genre:""
+  author:"L. M. Montgomery",genre:"",available:3
 },{
   title:"Twenty Thousand Leagues Under the Sea",
-  author:"Jules Verne",genre:""
+  author:"Jules Verne",genre:"",available:0
 },{
   title:"It Ends with Us",
-  author:"Colleen Hoover",genre:""
+  author:"Colleen Hoover",genre:"",available:2
 },{
   title:"Magic Hour",
-  author:"Kristin Hannah",genre:""
+  author:"Kristin Hannah",genre:"",available:1
 },{
   title:"Percy Jackson and the Lightning Thief",
-  author:"Rick Riordan",genre:""
+  author:"Rick Riordan",genre:"",available:3
 }
 )
 

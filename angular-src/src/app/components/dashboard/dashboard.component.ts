@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit {
   booktitle:String="";
   title: String="";
   author:String="";
+  avai:String="";
+  genre:String=""
 
 
   constructor(
@@ -33,36 +35,22 @@ export class DashboardComponent implements OnInit {
       var as = this.http.post("http://localhost:3000/users/dashboard/" + this.booktitle, {responseType:'object'}).subscribe((resultData: any)=>{  //bank end id tyylii niin toimis ehkä
         //console.log(resultData);
         let info = JSON.parse(resultData._body)
+        console.log(resultData)
         this.title = "";
         this.author = "";
+        this.avai="";
+        this.genre="";
 
         if(info.data =='Book not found') {
           this.flashMessage.show('Book not found', {cssClass: 'alert-success', timeout: 5000});
         }
         else{
-          
-          //this.book = resultData
           this.title = info.data.title;
           this.author = info.data.author;
+          this.avai=info.data.available;
+          this.genre=info.data.genre;
         }
       })
-
-    
-
-    /*
-    const book = {
-      title: this.title
-    }
-  
-    console.log(book)
-    this.authService.getBookInfo().subscribe(book =>{
-      this.title = book.book;
-      if(book.success) {
-        this.flashMessage.show('Book found', {cssClass: 'alert-success', timeout: 5000});
-      } else {
-        this.flashMessage.show('Book not found', {cssClass: 'alert-danger', timeout: 5000});
-      }
-  });*/
   
   }
 

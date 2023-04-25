@@ -11,6 +11,9 @@ let BookSchema = new Schema({
     },
     genre:{
         type:String,
+    },
+    available:{
+        type:Number,
     }
 });
 
