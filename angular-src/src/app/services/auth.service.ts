@@ -8,6 +8,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
+  book:any
 
   constructor(
     private http:Http
@@ -36,6 +37,13 @@ export class AuthService {
     return this.http.get('http://localhost:3000/users/profile', {headers: headers})
       .map(res => res.json());
   }
+
+  /*
+  getBookInfo(){
+    return this.http.get('http://localhost:3000/users/dashboard/:title')
+      .map(res => res.json());
+      
+  }*/
 
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);

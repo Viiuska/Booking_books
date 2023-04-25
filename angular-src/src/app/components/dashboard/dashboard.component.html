@@ -1,2 +1,24 @@
-<h2 class="page-header">Book Inventory</h2>
-<p>Welcome to your Book Inventory</p>
+<div>
+    <h2 class="page-header">Book Inventory</h2>
+    <p>Welcome to your Book Inventory, search for books by title.</p>
+</div>
+
+<form class="form-search" (submit)="onSearchSubmit()">
+    <div class="form-group">
+      <label for="Title">Title</label>
+      <input type="text" class="form-control" placeholder="Enter title" [(ngModel)]="booktitle" name="booktitle">
+    </div>
+    <input class="btn btn-lg btn-primary" type="submit" value="Search"> 
+    <br>
+    <br>
+    <br>
+    
+      <ul class="list-group">
+        <li class="list-group-item">Title : {{ title }}</li>
+        <li class="list-group-item">Author : {{ author }}</li>
+      </ul>
+    
+</form>
+<br>
+
+

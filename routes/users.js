@@ -3,9 +3,58 @@ const router = express.Router()
 const passport = require('passport')
 const jwt = require("jsonwebtoken");
 const User = require('../models/user')
+const Book = require('../models/book')
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const bookService = require('../config/bookService');
+const inventory = require('../routes/inventory')
 
+// Random books for the book mongoose schema
+Book.create({
+  title:"Don Quixote",
+  author:"Miguel de Cervantes",
+  genre:""
+},{
+  title:"Lord of the Rings",
+  author:"J.R.R. Tolkien",
+  genre:""
+},{
+  title:"Harry Potter and the Sorcerer's Stone",
+  author:"J.K. Rowling",
+  genre:""
+},{
+  title:"And Then There Were None",
+  author:"Agatha Christie",
+  genre:""
+},{
+  title:"Alice's Adventures in Wonderland",
+  author:"Lewis Carroll",genre:""
+},{
+  title:"The Lion, the Witch, and the Wardrobe",
+  author:"C.S. Lewis",genre:""
+},{
+  title:"Pinocchio",
+  author:"Carlo Collodi",genre:""
+},{
+  title:"Catcher in the Rye",
+  author:"J.D. Salinger",genre:""
+},{
+  title:"Anne of Green Gables",
+  author:"L. M. Montgomery",genre:""
+},{
+  title:"Twenty Thousand Leagues Under the Sea",
+  author:"Jules Verne",genre:""
+},{
+  title:"It Ends with Us",
+  author:"Colleen Hoover",genre:""
+},{
+  title:"Magic Hour",
+  author:"Kristin Hannah",genre:""
+},{
+  title:"Percy Jackson and the Lightning Thief",
+  author:"Rick Riordan",genre:""
+}
+)
 
 
 router.post('/register', (req, res, next)=>{
@@ -66,5 +115,11 @@ router.post('/authenticate', (req, res, next)=>{
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next)=>{
     res.json({user:req.user})
 })
+
+
+
+router.route('/dashboard/:title').post(inventory.findOneBook);
+
+
 
 module.exports=router
